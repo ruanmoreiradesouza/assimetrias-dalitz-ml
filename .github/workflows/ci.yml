@@ -1,0 +1,26 @@
+name: testes
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  testes:
+    runs-on: ubuntu-latest
+    env:
+      # uma thread de BLAS/OpenMP por processo (com várias, os ajustes ficam >100x mais lentos sob concorrência)
+      OMP_NUM_THREADS: "1"
+      OPENBLAS_NUM_THREADS: "1"
+      MKL_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Instalar
+        run: pip install -e ".[dev]"
+      - name: Lint
+        run: ruff check .
+      - name: Testes
+        run: pytest

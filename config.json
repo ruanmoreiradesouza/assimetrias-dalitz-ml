@@ -1,0 +1,11 @@
+{
+  "semente_mae": 20261027,
+  "massas_GeV": {"B": 5.27934, "K": 0.493677, "pi": 0.13957039},
+  "ressonancia_pipi": {"m": 2.0, "gamma": 0.15},
+  "kstar": {"m": 0.89555, "gamma": 0.0473},
+  "theta_nominal": {"c2": 0.8, "delta2": 1.5707963267948966, "c3": 0.5, "delta3": 0.3, "dphi": 0.25},
+  "A_det": -0.01,
+  "eficiencia": {"e0": 0.7, "e1": 0.3},
+  "N_eventos": 5000,
+  "n_mc_normalizacao": 400000
+}
